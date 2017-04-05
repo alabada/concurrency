@@ -1,6 +1,6 @@
-并发编程参考代码，陆陆续续的更新。。。
+并发编程代码大全
 
-### com.alabada.con01_Thread
+### 有关线程 com.alabada.con01_Thread
     Calculator01、Calculator02：
         线程创建（实现Runnable接口的类，使用带参数的Thread构造器来创建Thread对象，这个参数就是实现Runnable接口的类的一个对象）。
         线程基本状态获取。
