@@ -12,5 +12,9 @@
         TimeUnit.SECONDS.sleep的使用。
     DataSourceLoader、NetworkConnectionLoader
         join方法的使用：当一个线程对象的join()方法被调用时，调用它的线程将被挂起，直到这个线程对象完成它的任务。
-
+    CleanerTask，WriteTask，Event：
+        守护线程的使用：
+    ExceptionHandler，Task：
+        在线程对象里捕获和处理运行时异常的一种机制
+        如果线程没有被与之未捕获异常处理器，JVM将打印堆栈记录到控制台，并退出程序
 
