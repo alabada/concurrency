@@ -30,6 +30,8 @@
     Account，Bank，Company：
         一个对象的方法采用synchronized关键字进行申明，只能被一个线程访问。
         如果线程a正在执行一个同步方法syncMethonA(),线程b要执行这个对象的其他同步方法syncMethodB(),线程b将被阻塞，直到线程a访问完。但如果线程b访问的是同一个类的不同对象，那么两个线程都不会被阻塞。
+    Cinema,TicketOffice1,TicketOffice2：
+        使用对象作为synchronized()的参数来保护代码块。不同的属性使用不同的对象，通过这种方式，来达到对不同属性的同步控制。
 
 
 
