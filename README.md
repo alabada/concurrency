@@ -6,6 +6,7 @@
         线程基本状态获取。
     PrimeGenerator:
         继承Thread类，并且覆盖run()方法的方式来创建线程，并测试中断线程。
-
+    FileSearch:
+        线程中的异常处理
 
 
