@@ -23,6 +23,8 @@
         线程组的使用:调用线程组的interrupt方法，将该组下其余线程都中断
     MyThreadGroup:
         线程组非捕获异常处理器的使用
+    MyThreadFactory:
+        使用工厂类来创建线程使用案例
 
 
 
