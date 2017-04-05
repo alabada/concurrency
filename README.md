@@ -32,6 +32,9 @@
         如果线程a正在执行一个同步方法syncMethonA(),线程b要执行这个对象的其他同步方法syncMethodB(),线程b将被阻塞，直到线程a访问完。但如果线程b访问的是同一个类的不同对象，那么两个线程都不会被阻塞。
     Cinema,TicketOffice1,TicketOffice2：
         使用对象作为synchronized()的参数来保护代码块。不同的属性使用不同的对象，通过这种方式，来达到对不同属性的同步控制。
+    EventStorage,Producer,Consumer：
+        典型的生产者与消费者问题
+        wait(),notify(),notifyAll()方法的使用
 
 
 
