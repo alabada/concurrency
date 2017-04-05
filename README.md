@@ -21,6 +21,8 @@
         线程局部变量的使用：通过这种方式，每个线程都有它们自己的startDate属性了
     SearchTask：
         线程组的使用:调用线程组的interrupt方法，将该组下其余线程都中断
+    MyThreadGroup:
+        线程组非捕获异常处理器的使用
 
 
 
