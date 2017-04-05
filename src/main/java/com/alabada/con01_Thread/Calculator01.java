@@ -6,11 +6,11 @@ package com.alabada.con01_Thread;
  * @Date 2017/4/5 9:58
  * @Description 线程案例01
  */
-public class Calculator implements Runnable {
+public class Calculator01 implements Runnable {
 
     private int number;
 
-    public Calculator(int number) {
+    public Calculator01(int number) {
         this.number = number;
     }
 
@@ -29,8 +29,8 @@ public class Calculator implements Runnable {
      */
     public static void main(String[] args) {
         for (int i = 1; i <= 10; i++) {
-            Calculator calculator = new Calculator(i);
-            Thread thread = new Thread(calculator);
+            Calculator01 calculator01 = new Calculator01(i);
+            Thread thread = new Thread(calculator01);
             thread.start(); // 调用Thread对象的start方法，另一个执行线程将被创建。
         }
     }
