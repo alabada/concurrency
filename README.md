@@ -7,6 +7,10 @@
     PrimeGenerator:
         继承Thread类，并且覆盖run()方法的方式来创建线程，并测试中断线程。
     FileSearch:
-        线程中的异常处理
+        线程中的异常处理。
+    FileSearch:
+        TimeUnit.SECONDS.sleep的使用。
+    DataSourceLoader、NetworkConnectionLoader
+        join方法的使用：当一个线程对象的join()方法被调用时，调用它的线程将被挂起，直到这个线程对象完成它的任务。
 
 
