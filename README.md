@@ -37,6 +37,8 @@
         wait(),notify(),notifyAll()方法的使用
     PrintQueue,Job：
         使用锁实现同步。
+    PricesInfo,Reader,Writer:
+        使用读写锁实现同步数据访问：ReentrantReadWriteLock
 
 
 
