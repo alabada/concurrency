@@ -39,6 +39,8 @@
         使用锁实现同步。(设计公平模式与非公平模式)
     PricesInfo,Reader,Writer:
         使用读写锁实现同步数据访问：ReentrantReadWriteLock
+    producerconsumer包下：
+        在锁中使用了多条件，这里可以看到条件对象Condition的使用。
 
 
 
