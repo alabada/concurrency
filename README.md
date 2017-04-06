@@ -35,6 +35,8 @@
     EventStorage,Producer,Consumer：
         典型的生产者与消费者问题
         wait(),notify(),notifyAll()方法的使用
+    PrintQueue,Job：
+        使用锁实现同步。
 
 
 

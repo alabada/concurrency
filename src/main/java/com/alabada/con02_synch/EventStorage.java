@@ -40,7 +40,7 @@ public class EventStorage {
     public synchronized void get() {
         while (storage.size() == 0) {
             try {
-                wait();
+                wait(); // 必须在while循环中调用wait，并且不断的查询while循环的条件，直到条件为真。
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
