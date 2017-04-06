@@ -17,7 +17,8 @@ public class PrintQueue {
      *
      * 线程离开临界区的时候，必须使用unlock()方法来释放它持有的锁，以让其他线程来访问临界区。如果在离开临界区的时候没有调用unlock（）方法，其他线程将永远地等待，从而导致死锁情景。
      */
-    private final Lock queueLock = new ReentrantLock(); // 申明一个锁对象
+//    private final Lock queueLock = new ReentrantLock(false); // 申明一个锁对象 非公平模式
+    private final Lock queueLock = new ReentrantLock(true); // 申明一个锁对象 公平模式
 
     public void printJob(Object document) {
         queueLock.lock(); // 获取对锁对象的控制
@@ -30,6 +31,17 @@ public class PrintQueue {
             e.printStackTrace();
         } finally {
             queueLock.unlock(); // 释放对锁对象的控制
+        }
+
+        queueLock.lock();
+        try {
+            Long duration=(long)(Math.random()*10000);
+            System.out.printf("%s: PrintQueue: Printing a Job during %d seconds\n",Thread.currentThread().getName(),(duration/1000));
+            Thread.sleep(duration);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            queueLock.unlock();
         }
     }
 
@@ -44,6 +56,11 @@ public class PrintQueue {
 
         for (int i = 0; i < 10; i++) {
             thread[i].start();
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
