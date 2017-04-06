@@ -42,7 +42,10 @@
     producerconsumer包下：
         在锁中使用了多条件，这里可以看到条件对象Condition的使用。
 
-
+### 线程同步辅助类 com.alabada.con03_assist
+    PrintQueue,Job：
+        信号量的使用案例，这里用到了二进制信号量。
+    
 
 
 
