@@ -46,6 +46,8 @@
     PrintQueue,Job：
         信号量的使用案例。
         可以看到，信号量对一些共享资源的访问控制做的非常好。
+    Videoconference,Participant:
+        等待多个并发事件完成案例增加，通过辅助类（CountDownLatch）来实现。
     
 
 
