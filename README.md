@@ -62,7 +62,7 @@
     com\alabada\con03_assist\myPhaser包下：
         演示了自定义phaser对象是如何同步多个线程的。
     com\alabada\con03_assist\exchange包下：
-        演示了两个想成之间是如何通过Exchange辅助类来实现数据交换的。
+        演示了两个线程之间是如何通过Exchange辅助类来实现数据交换的。
     
 
 
