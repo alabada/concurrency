@@ -42,14 +42,16 @@
     producerconsumer包下：
         在锁中使用了多条件，这里可以看到条件对象Condition的使用。
 
-### 线程同步辅助类 com.alabada.con03_assist
+### 线程同步辅助类
     PrintQueue,Job：
         信号量的使用案例。
         可以看到，信号量对一些共享资源的访问控制做的非常好。
     Videoconference,Participant:
         等待多个并发事件完成案例增加，通过辅助类（CountDownLatch）来实现。
     MatrixMock,Searcher,Grouper,Results
-        
+        CyclicBarrier案例
+    com\alabada\con03_assist\phaser包下：
+        演示了phaser对象是如何同步多个线程的。
     
 
 
