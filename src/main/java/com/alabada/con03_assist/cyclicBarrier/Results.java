@@ -1,4 +1,4 @@
-package com.alabada.con03_assist;
+package com.alabada.con03_assist.cyclicBarrier;
 
 /**
  * @Author 温枝达

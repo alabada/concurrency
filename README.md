@@ -53,14 +53,31 @@
         二进制信号量可以保护对单一共享资源，或者单一临界区的访问，从而使得保护的资源在同一个时间内只能被一个线程访问。
         信号量也是可以用来保护一个资源的多个副本，或者被多个线程执行的临界区。
 
-    Videoconference,Participant:
+    com\alabada\con03_assist\countDownLatch包下：
         等待多个并发事件完成案例增加，通过辅助类（CountDownLatch）来实现。
-    MatrixMock,Searcher,Grouper,Results
-        CyclicBarrier案例
+        总的说来，该辅助类是用来实现线程间同步的
+             比如说：10个人开会，如何做到在10个人都到齐后，会议正式开始。
+        
+             一个初始值，即定义必须等待的先行完成的操作的数目；
+             await()方法，需要等待其他事件先完成的线程调用；
+             countDown()方法，每个被等待的时间在完成的时候调用。
+             当内部计数器到达0的时候，CountDownLatch对象将唤起所有的await（）方法上等待的线程。
+
+        
+    com\alabada\con03_assist\cyclicBarrier包下：
+        也是同步辅助类，允许两个或者多个线程在某个点上进行同步。与CountDownLatch类似。
+             CyclicBarrier类有一个内部计数器，可以控制指定书目的几个线程必须都达到集合点。
+             每一个线程到达集合点就会调用awiat()方法通知CyclicBarrier对象，CyclicBarrier对象会让这个线程休眠直到其他所有的线程到达集合点。
+
+        
     com\alabada\con03_assist\phaser包下：
         演示了phaser对象是如何同步多个线程的。
+        解决多个线程之间同步的问题
+        比如：对于一件事情，一个线程执行完成后挂起等待所有线程都将这件事情执行完毕后，才处理其他的线程。
+
     com\alabada\con03_assist\myPhaser包下：
         演示了自定义phaser对象是如何同步多个线程的。
+        
     com\alabada\con03_assist\exchange包下：
         演示了两个线程之间是如何通过Exchange辅助类来实现数据交换的。
     

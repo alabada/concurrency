@@ -1,4 +1,4 @@
-package com.alabada.con03_assist;
+package com.alabada.con03_assist.cyclicBarrier;
 
 /**
  * @Author 温枝达
@@ -8,22 +8,15 @@ package com.alabada.con03_assist;
  */
 public class Grouper implements Runnable {
 
-    /**
-     * Results object with the occurrences of the number in each row
-     */
     private Results results;
 
-    /**
-     * Constructor of the class. Initializes its attributes
-     *
-     * @param results Results object with the ocurrences of the number in each row
-     */
     public Grouper(Results results) {
         this.results = results;
     }
 
     /**
-     * Main method of the Grouper. Sum the values stored in the Results object
+     * 这个线程在所有其他线程都执行完毕后自动执行
+     * 同步了其他5个查找线程
      */
     @Override
     public void run() {
