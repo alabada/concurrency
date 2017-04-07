@@ -1,4 +1,4 @@
-package com.alabada.con03_assist;
+package com.alabada.con03_assist.semaphore;
 
 /**
  * @Author 温枝达

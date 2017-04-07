@@ -1,4 +1,4 @@
-package com.alabada.con03_assist;
+package com.alabada.con03_assist.semaphore;
 
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
@@ -13,6 +13,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class PrintQueue {
 
+    // 声明信号量对象
     private final Semaphore semaphore;
 
     private boolean freePrinters[];
@@ -21,10 +22,13 @@ public class PrintQueue {
 
     public PrintQueue() {
         // 将1作为传入参数，创建的就是二进制信号量。
-        // 如果信号量的内部计数器初始值是1，所以它只能保护一个共享资源的访问。
+        // 如果信号量的内部计数器初始值是1，所以它只能保护 一个 共享资源的访问。
         // 以下将信号量初始化为3
         semaphore = new Semaphore(3);
+
+        // 模拟哪些打印机在使用的数组
         freePrinters = new boolean[3];
+
         for (int i = 0; i < 3; i++) {
             freePrinters[i] = true;
         }
@@ -41,20 +45,18 @@ public class PrintQueue {
      */
     public void printJob(Object document) {
         try {
-            semaphore.acquire(); // 1、通过该方法获得信号量，
+            semaphore.acquire(); // 1、每个线程都得通过该方法获得信号量。
 
+            // 2、开始使用共享资源
             int assignedPrinter = getPrinter();
-
-            // 2、
             Long duration = (long) (Math.random() * 10);
             System.out.printf("%s: PrintQueue: Printing a Job in Printer %d during %d seconds\n", Thread.currentThread().getName(), assignedPrinter, duration);
             TimeUnit.SECONDS.sleep(duration);
-
             freePrinters[assignedPrinter] = true;
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
-            semaphore.release(); // 3、释放信号量
+            semaphore.release(); // 3、共享资源使用完毕需要释放信号量
         }
     }
 
@@ -78,17 +80,4 @@ public class PrintQueue {
         return ret;
     }
 
-    public static void main(String args[]) {
-
-        PrintQueue printQueue = new PrintQueue();
-
-        Thread thread[] = new Thread[10];
-        for (int i = 0; i < 10; i++) {
-            thread[i] = new Thread(new Job(printQueue), "Thread " + i);
-        }
-
-        for (int i = 0; i < 10; i++) {
-            thread[i].start();
-        }
-    }
 }

@@ -43,9 +43,16 @@
         在锁中使用了多条件，这里可以看到条件对象Condition的使用。
 
 ### 线程同步辅助类
-    PrintQueue,Job：
+    com\alabada\con03_assist\semaphore包下：
         信号量的使用案例。
         可以看到，信号量对一些共享资源的访问控制做的非常好。
+        信号量实现临界区必须遵循三个步骤，从而对共享资源的访问：
+              首先，必须通过acquire()方法获得信号量；
+              其次，使用共享资源执行必要的操作；
+              最后，必须通过release方法释放信号量。
+        二进制信号量可以保护对单一共享资源，或者单一临界区的访问，从而使得保护的资源在同一个时间内只能被一个线程访问。
+        信号量也是可以用来保护一个资源的多个副本，或者被多个线程执行的临界区。
+
     Videoconference,Participant:
         等待多个并发事件完成案例增加，通过辅助类（CountDownLatch）来实现。
     MatrixMock,Searcher,Grouper,Results
