@@ -1,5 +1,6 @@
 package com.alabada.con03_assist;
 
+import java.util.HashMap;
 import java.util.Random;
 import java.util.concurrent.CyclicBarrier;
 
@@ -31,6 +32,7 @@ public class MatrixMock {
     }
 
     public static void main(String[] args) {
+
 
 		/*
          * Initializes the bi-dimensional array of data
