@@ -26,21 +26,43 @@
     MyThreadFactory:
         使用工厂类来创建线程使用案例
         
-### 同步 com.alabada.con02_synch
-    Account，Bank，Company：
+### 线程同步基础
+    com\alabada\con02_synch\synch 包下：
         一个对象的方法采用synchronized关键字进行申明，只能被一个线程访问。
-        如果线程a正在执行一个同步方法syncMethonA(),线程b要执行这个对象的其他同步方法syncMethodB(),线程b将被阻塞，直到线程a访问完。但如果线程b访问的是同一个类的不同对象，那么两个线程都不会被阻塞。
-    Cinema,TicketOffice1,TicketOffice2：
-        使用对象作为synchronized()的参数来保护代码块。不同的属性使用不同的对象，通过这种方式，来达到对不同属性的同步控制。
-    EventStorage,Producer,Consumer：
+        如果线程a正在执行一个同步方法syncMethonA(),线程b要执行这个对象的其他同步方法syncMethodB(),线程b将被阻塞，直到线程a访问完。
+        但如果线程b访问的是同一个类的不同对象，那么两个线程都不会被阻塞。
+        
+    com\alabada\con02_synch\synch1 包下：
+        使用对象作为synchronized()的参数来保护代码块。
+        不同的属性使用不同的对象，通过这种方式，来达到对不同属性的同步控制。
+        
+    com\alabada\con02_synch\producerconsumer1 包下：
         典型的生产者与消费者问题
         wait(),notify(),notifyAll()方法的使用
-    PrintQueue,Job：
+        
+    com\alabada\con02_synch\lock 包下：
         使用锁实现同步。(设计公平模式与非公平模式)
-    PricesInfo,Reader,Writer:
+        ReentrantLock锁的使用：
+             首先，创建ReentrantLock对象；
+             其次，在临界区的开始，必须通过lock()方法获取对锁的控制，当线程A访问这个方法时，如果没有其他线程获取对这个锁的控制，lock()方法将让线程A获得锁并且允许它立刻执行临界区代码。否则就只能等到其他线程执行完，线程A才可以接着执行。
+             最后，在线程离开临界区的时候，必须使用unlock()方法来释放它持有的锁，以让其他线程来访问临界区。如果在离开临界区时没有调用unlock()方法，其他线程将永久等待，从而导致死锁的发生。
+        
+    com\alabada\con02_synch\readWriteLock 包下：
         使用读写锁实现同步数据访问：ReentrantReadWriteLock
-    producerconsumer包下：
-        在锁中使用了多条件，这里可以看到条件对象Condition的使用。
+         这个类有两个锁，一个是读操作锁，另一个是写操作锁。使用读操作锁时可以允许多个线程同时访问，但是使用写操作锁时只允许一个线程进行。
+         在一个线程执行写操作时，其他线程不能够执行读操作。
+        
+    com\alabada\con02_synch\producerconsumer2包下：
+        当一个线程调用了条件对象的signal()或者signalAll()方法后，一个或者多个在该条件上挂起的线程将被唤醒，但这并不能保证让他们挂起的条件已经满足，
+         所以必须在while循环中调用await（），在条件成立之前不能离开这个循环，如果条件不成立，将再次调用await（）。
+         案例：解决经典的生产者-消费者问题
+              生产者生产数据与消费者消费数据基于不同的条件对象；
+              生产者在生成数据时，如果发现缓冲区已满，则将调用其中一个条件对象的await()方法；
+              同理，当消费者消费数据时，发现缓冲区没有数据，则调用另一个对象的await()方法；
+              缓冲区有数据了，相应条件对象又调用signalAll()方法来告知消费者可以消费了；
+              同理，缓冲区有空间了，相应条件对象也调用signalAll()方法来告知生产者可以继续生成数据了。
+
+        
 
 ### 线程同步辅助类
     com\alabada\con03_assist\semaphore包下：

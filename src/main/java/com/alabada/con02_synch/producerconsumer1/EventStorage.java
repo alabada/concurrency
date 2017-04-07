@@ -1,4 +1,4 @@
-package com.alabada.con02_synch;
+package com.alabada.con02_synch.producerconsumer1;
 
 import java.util.Date;
 import java.util.LinkedList;
@@ -49,17 +49,4 @@ public class EventStorage {
         notifyAll();
     }
 
-    public static void main(String[] args) {
-
-        EventStorage storage = new EventStorage();
-
-        Producer producer = new Producer(storage);
-        Thread thread1 = new Thread(producer);
-
-        Consumer consumer = new Consumer(storage);
-        Thread thread2 = new Thread(consumer);
-
-        thread2.start();
-        thread1.start();
-    }
 }

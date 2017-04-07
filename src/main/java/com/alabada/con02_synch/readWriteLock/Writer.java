@@ -1,10 +1,10 @@
-package com.alabada.con02_synch;
+package com.alabada.con02_synch.readWriteLock;
 
 /**
  * @Author 温枝达
  * @Email alabadazi@gmail.com
  * @Date 2017/4/6 13:31
- * @Description
+ * @Description 写线程
  */
 public class Writer implements Runnable {
 

@@ -1,4 +1,4 @@
-package com.alabada.con02_synch;
+package com.alabada.con02_synch.synch;
 
 /**
  * @Author 温枝达

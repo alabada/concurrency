@@ -1,4 +1,4 @@
-package com.alabada.con02_synch.producerconsumer;
+package com.alabada.con02_synch.producerconsumer2;
 
 import java.util.LinkedList;
 import java.util.concurrent.locks.Condition;
@@ -22,14 +22,17 @@ public class Buffer {
     public Buffer(int maxSize) {
         this.maxSize = maxSize;
         buffer = new LinkedList<>();
+
         lock = new ReentrantLock();
         lines = lock.newCondition();
         space = lock.newCondition();
+
         pendingLines = true;
     }
 
     /**
      * 把接到的字符串写到缓冲区中
+     *
      * @param line
      */
     public void insert(String line) {
@@ -51,6 +54,7 @@ public class Buffer {
 
     /**
      * 返回缓冲区中的第一个字符串
+     *
      * @return
      */
     public String get() {

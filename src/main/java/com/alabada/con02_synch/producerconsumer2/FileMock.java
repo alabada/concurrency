@@ -1,4 +1,4 @@
-package com.alabada.con02_synch.producerconsumer;
+package com.alabada.con02_synch.producerconsumer2;
 
 /**
  * @Author 温枝达

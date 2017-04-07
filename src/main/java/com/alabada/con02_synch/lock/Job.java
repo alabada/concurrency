@@ -1,10 +1,10 @@
-package com.alabada.con02_synch;
+package com.alabada.con02_synch.lock;
 
 /**
  * @Author 温枝达
  * @Email alabadazi@gmail.com
  * @Date 2017/4/6 10:12
- * @Description
+ * @Description 调用打印机的线程（负责调用打印机）
  */
 public class Job implements Runnable {
 

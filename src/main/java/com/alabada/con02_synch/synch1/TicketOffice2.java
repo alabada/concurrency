@@ -1,10 +1,10 @@
-package com.alabada.con02_synch;
+package com.alabada.con02_synch.synch1;
 
 /**
  * @Author 温枝达
  * @Email alabadazi@gmail.com
  * @Date 2017/4/5 23:33
- * @Description
+ * @Description 模拟购票窗口2
  */
 public class TicketOffice2 implements Runnable {
 

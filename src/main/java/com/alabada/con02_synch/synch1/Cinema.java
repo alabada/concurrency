@@ -1,4 +1,4 @@
-package com.alabada.con02_synch;
+package com.alabada.con02_synch.synch1;
 
 /**
  * @Author 温枝达
@@ -7,9 +7,19 @@ package com.alabada.con02_synch;
  * @Description
  */
 public class Cinema {
+
     private long vacanciesCinema1;
+
     private long vacanciesCinema2;
 
+    /**
+     * 这两个属性单纯就是用来做锁用的
+     * 通过这种方式带来的优点：
+     * 可以通过不同的对象去控制不同的临界区；
+     * 这样就能够提高一些性能，因为锁不一样了。
+     *
+     * 对于不同的资源使用不同的锁
+     */
     private final Object controlCinema1, controlCinema2;
 
     public Cinema() {
@@ -20,6 +30,9 @@ public class Cinema {
     }
 
     public boolean sellTickets1(int number) {
+        /**
+         * 窗口1卖票使用controlCinema1锁
+         */
         synchronized (controlCinema1) {
             if (number < vacanciesCinema1) {
                 vacanciesCinema1 -= number;
@@ -31,6 +44,9 @@ public class Cinema {
     }
 
     public boolean sellTickets2(int number) {
+        /**
+         * 窗口2卖票使用controlCinema2锁
+         */
         synchronized (controlCinema2) {
             if (number < vacanciesCinema2) {
                 vacanciesCinema2 -= number;
@@ -42,6 +58,9 @@ public class Cinema {
     }
 
     public boolean returnTickets1(int number) {
+        /**
+         * 窗口1退票使用controlCinema1锁
+         */
         synchronized (controlCinema1) { // 使用synchronized来保护代码块，以一个对象作为其参数
             vacanciesCinema1 += number;
             return true;
@@ -49,6 +68,9 @@ public class Cinema {
     }
 
     public boolean returnTickets2(int number) {
+        /**
+         * 窗口2退票使用controlCinema2锁
+         */
         synchronized (controlCinema2) {
             vacanciesCinema2 += number;
             return true;
@@ -61,29 +83,6 @@ public class Cinema {
 
     public long getVacanciesCinema2() {
         return vacanciesCinema2;
-    }
-
-    public static void main(String[] args) {
-        Cinema cinema = new Cinema();
-
-        TicketOffice1 ticketOffice1 = new TicketOffice1(cinema);
-        Thread thread1 = new Thread(ticketOffice1, "TicketOffice1");
-
-        TicketOffice2 ticketOffice2 = new TicketOffice2(cinema);
-        Thread thread2 = new Thread(ticketOffice2, "TicketOffice2");
-
-        thread1.start();
-        thread2.start();
-
-        try {
-            thread1.join(); // main线程将被挂起，直到thread1执行完毕
-            thread2.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        System.out.printf("Room 1 Vacancies: %d\n", cinema.getVacanciesCinema1());
-        System.out.printf("Room 2 Vacancies: %d\n", cinema.getVacanciesCinema2());
     }
 
 }

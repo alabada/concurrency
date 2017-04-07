@@ -1,4 +1,4 @@
-package com.alabada.con02_synch;
+package com.alabada.con02_synch.lock;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -45,22 +45,4 @@ public class PrintQueue {
         }
     }
 
-    public static void main(String args[]) {
-
-        PrintQueue printQueue = new PrintQueue();
-
-        Thread thread[] = new Thread[10];
-        for (int i = 0; i < 10; i++) {
-            thread[i] = new Thread(new Job(printQueue), "Thread " + i);
-        }
-
-        for (int i = 0; i < 10; i++) {
-            thread[i].start();
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 }

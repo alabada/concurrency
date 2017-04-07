@@ -1,11 +1,11 @@
-package com.alabada.con02_synch;
+package com.alabada.con02_synch.producerconsumer1;
 
 
 /**
  * @Author 温枝达
  * @Email alabadazi@gmail.com
  * @Date 2017/4/6 0:09
- * @Description
+ * @Description 生产者线程，只管生产
  */
 public class Producer implements Runnable {
 
