@@ -110,6 +110,10 @@
         使用ThreadPoolExecutor来执行任务；推荐使用Executors工厂来创建ThreadPoolExecutor.
         仅当线程的数量是合理的，或者线程只会运行很短的时间内，适合采用这种方法。
 
+    com\alabada\con04_executor\demo02包下：
+        创建固定大小的线程执行器
+        使用Executors工厂类的newFixedThreadPool方法来创建执行器。创建了具有线程数量最大值的执行器。
+
 
 
 
