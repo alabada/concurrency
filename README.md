@@ -104,6 +104,14 @@
         演示了两个线程之间是如何通过Exchange辅助类来实现数据交换的。
     
 
+### 线程执行器
+    com\alabada\con04_executor\demo01包下：
+        缓存线程池的使用。
+        使用ThreadPoolExecutor来执行任务；推荐使用Executors工厂来创建ThreadPoolExecutor.
+        仅当线程的数量是合理的，或者线程只会运行很短的时间内，适合采用这种方法。
+
+
+
 
 
 
