@@ -114,7 +114,10 @@
         创建固定大小的线程执行器
         使用Executors工厂类的newFixedThreadPool方法来创建执行器。创建了具有线程数量最大值的执行器。
 
-
+    com\alabada\con04_executor\demo03_callable：
+        执行器框架的优势：可以运行并发任务并返回结果。
+        Callable：这个接口声明了call（）方法。可以在这个方法里实现任务的具体逻辑操作。
+        Future:这个接口声明了一些方法来获取由Callable产生的结果，并管理它们的状态。
 
 
 
