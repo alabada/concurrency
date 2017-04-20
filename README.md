@@ -122,6 +122,9 @@
     com\alabada\con04_executor\demo04：
         返回第一个完成任务并且没有抛出异常的任务的执行结果。
 
+    com\alabada\con04_executor\demo05：
+        运行多个任务并处理所有结果
+
 
 
 
