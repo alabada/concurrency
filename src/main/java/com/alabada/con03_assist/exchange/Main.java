@@ -15,11 +15,11 @@ public class Main {
     public static void main(String[] args) {
 
         // Creates two buffers
-        List<String> buffer1 = new ArrayList<>();
-        List<String> buffer2 = new ArrayList<>();
+        List<String> buffer1 = new ArrayList<String>();
+        List<String> buffer2 = new ArrayList<String>();
 
         // Creates the exchanger
-        Exchanger<List<String>> exchanger = new Exchanger<>();
+        Exchanger<List<String>> exchanger = new Exchanger<List<String>>();
 
         // Creates the producer
         Producer producer = new Producer(buffer1, exchanger);

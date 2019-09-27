@@ -14,6 +14,7 @@ public class Calculator01 implements Runnable {
         this.number = number;
     }
 
+    @Override
     public void run() {
         for (int i = 1; i <= 10; i++) {
             // printf 的使用

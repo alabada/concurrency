@@ -18,7 +18,7 @@ public class EventStorage {
 
     public EventStorage() {
         maxSize = 10;
-        storage = new LinkedList<>();
+        storage = new LinkedList<Date>();
     }
 
     /**

@@ -21,7 +21,7 @@ public class Buffer {
 
     public Buffer(int maxSize) {
         this.maxSize = maxSize;
-        buffer = new LinkedList<>();
+        buffer = new LinkedList<String>();
 
         lock = new ReentrantLock();
         lines = lock.newCondition();

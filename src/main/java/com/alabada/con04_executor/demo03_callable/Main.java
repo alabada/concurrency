@@ -22,7 +22,7 @@ public class Main {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
 
         // Future:这个接口声明了一些方法来获取由Callable产生的结果，并管理它们的状态。
-        List<Future<Integer>> resultList = new ArrayList<>();
+        List<Future<Integer>> resultList = new ArrayList<Future<Integer>>();
 
         // Create a random number generator
         Random random = new Random();

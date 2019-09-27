@@ -31,7 +31,7 @@ public class FileSearch implements Runnable {
         this.initPath = initPath;
         this.end = end;
         this.phaser = phaser;
-        results = new ArrayList<>();
+        results = new ArrayList<String>();
     }
 
     /**
@@ -105,7 +105,7 @@ public class FileSearch implements Runnable {
      * 做过滤操作，将不是过去24小时修改过的文件删除
      */
     private void filterResults() {
-        List<String> newResults = new ArrayList<>();
+        List<String> newResults = new ArrayList<String>();
         long actualDate = new Date().getTime(); // 获取当前时间
         for (int i = 0; i < results.size(); i++) {
             File file = new File(results.get(i));

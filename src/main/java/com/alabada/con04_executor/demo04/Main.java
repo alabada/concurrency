@@ -32,7 +32,7 @@ public class Main {
         TaskValidator dbTask = new TaskValidator(dbValidator, username, password);
 
         // Add the two tasks to a list of tasks
-        List<TaskValidator> taskList = new ArrayList<>();
+        List<TaskValidator> taskList = new ArrayList<TaskValidator>();
         taskList.add(ldapTask);
         taskList.add(dbTask);
 
