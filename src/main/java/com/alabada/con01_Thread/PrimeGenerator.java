@@ -43,7 +43,8 @@ public class PrimeGenerator extends Thread {
         task.start(); // 开启线程
 
         try {
-            Thread.sleep(5000); // 让main线程睡眠5秒，避免线程开启就关闭
+            // 让main线程睡眠5秒，避免线程开启就关闭
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

@@ -21,6 +21,7 @@ public class FileSearch implements Runnable {
     }
 
 
+    @Override
     public void run() {
 
         File file = new File(initPath);
@@ -39,7 +40,7 @@ public class FileSearch implements Runnable {
         if(list != null) {
             for (int i = 0; i <list.length; i ++) {
                 if (list[i].isDirectory()) {
-                    directoryProcess(list[i]); //
+                    directoryProcess(list[i]);
                 } else {
                     fileProcess(list[i]);
                 }
